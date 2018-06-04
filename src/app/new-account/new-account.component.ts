@@ -13,6 +13,9 @@ export class NewAccountComponent {
 
   constructor (private loggingService: LoggingService, private accountsService: AccountsService){
     //private loggingService: LoggingService  - this informs  we need an instance of LoggingService
+    this.accountsService.statusUpdated.subscribe(
+    (status: string) => alert('New status: ' + status);
+  )
   }
 
   onCreateAccount(accountName: string, accountStatus: string) {
